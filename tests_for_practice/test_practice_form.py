@@ -67,4 +67,4 @@ def test_hobbies():
     browser.element(xpath(hobbies_music)).click()
 
 def test_picture():
-    browser.element(xpath(picture_button)).set_value(image)
+    browser.element(xpath(picture_button)).
