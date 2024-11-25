@@ -1,6 +1,3 @@
-import time
-from datetime import datetime
-
 from selene import browser, be, have
 from selene.support.by import xpath
 
@@ -23,6 +20,7 @@ hobbies_sport = '//input[@id="hobbies-checkbox-1"]'
 hobbies_reading = '//input[@id="hobbies-checkbox-2"]'
 hobbies_music = '//input[@id="hobbies-checkbox-3"]'
 picture_button = '//input[@id="uploadPicture"]'
+address_field = '//textarea[@id="currentAddress"]'
 
 
 def test_name():
@@ -51,7 +49,7 @@ def test_datepicker():
     browser.element(xpath(datepicker_address)).click()
     browser.element(xpath(datepicker_tenth_day)).click()
     browser.element(xpath(datepicker_address)).should(have.value_containing("10"))
-
+##TODO: найти споособ взаимодействия с мультиселектом в сабжектах
 def test_subjects():
     browser.element(xpath(subjects_input_line)).should(be.blank)
     browser.element(xpath(subjects_input_line)).type('M')
@@ -67,4 +65,13 @@ def test_hobbies():
     browser.element(xpath(hobbies_music)).click()
 
 def test_picture():
-    browser.element(xpath(picture_button)).
+    browser.element(xpath(picture_button)).should(be.clickable)
+
+def test_address():
+    browser.element(xpath(address_field)).should(be.blank)
+    browser.element(xpath(address_field)).type("wdawdawd21312414agagwt124124afgw")
+    browser.element(xpath(address_field)).should(have.value("wdawdawd21312414agagwt124124afgw"))
+
+
+
+
