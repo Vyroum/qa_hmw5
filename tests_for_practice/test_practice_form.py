@@ -20,7 +20,7 @@ def test_practice_form():
     browser.element("#dateOfBirthInput").click()
     browser.element("[class='react-datepicker__month-select']").click().element(by.text("September")).click()
     browser.element("[class='react-datepicker__year-select']").click().element(by.text("1995")).click()
-    browser.element("[class='react-datepicker__month']").element(by.text("13")).click()
+    browser.element(by.text("13")).click()
 
     browser.element("#subjectsInput").type('Maths').press_enter().type("Arts").press_enter().type("Computer Science").press_enter()
 
