@@ -16,7 +16,6 @@ def test_practice_form():
 
     browser.element('[id="userNumber"]').type("1231231234")
 
-    browser.element('[id="dateOfBirthInput"]').click()
     browser.element("#dateOfBirthInput").click()
     browser.element("[class='react-datepicker__month-select']").click().element(by.text("September")).click()
     browser.element("[class='react-datepicker__year-select']").click().element(by.text("1995")).click()
