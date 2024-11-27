@@ -24,12 +24,11 @@ def test_practice_form():
 
     browser.element("#subjectsInput").type('Maths').press_enter().type("Arts").press_enter().type("Computer Science").press_enter()
 
-
     browser.element(by.text("Sports")).click()
     browser.element(by.text("Music")).click()
     browser.element(by.text("Reading")).click()
 
-    #browser.element(by.text("[id='uploadPicture']")).send_keys(os.path.abspath("../tests_for_practice/image.jpg"))
+    browser.element("[id='uploadPicture']").send_keys(os.path.abspath("../tests_for_practice/image.jpg"))
 
     browser.element('[id="currentAddress"]').type("City Name, Street Name")
 
@@ -46,6 +45,6 @@ def test_practice_form():
     browser.element(".modal-body").should(have.text("13 September,1995"))
     browser.element(".modal-body").should(have.text("Maths, Arts, Computer Science"))
     browser.element(".modal-body").should(have.text("Sports, Music, Reading"))
-    #browser.element(".modal-body").should(have.text("image.jpg"))
+    browser.element(".modal-body").should(have.text("image.jpg"))
     browser.element(".modal-body").should(have.text("City Name, Street Name"))
     browser.element(".modal-body").should(have.text("NCR Noida"))
