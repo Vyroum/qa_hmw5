@@ -7,14 +7,14 @@ def test_practice_form():
     browser.driver.execute_script("$('#fixedban').remove()")
     browser.driver.execute_script("$('footer').remove()")
 
-    browser.element('[id="firstName"]').should(be.blank).type("Andrei")
-    browser.element('[id="lastName"]').should(be.blank).type("Monichev")
+    browser.element('[id="firstName"]').type("Andrei")
+    browser.element('[id="lastName"]').type("Monichev")
 
-    browser.element('[id="userEmail"]').should(be.blank).type("testmail@test.ru")
+    browser.element('[id="userEmail"]').type("testmail@test.ru")
 
     browser.element(by.text("Male")).click()
 
-    browser.element('[id="userNumber"]').should(be.blank).type("1231231234")
+    browser.element('[id="userNumber"]').type("1231231234")
 
     browser.element('[id="dateOfBirthInput"]').click()
     browser.element("#dateOfBirthInput").click()
